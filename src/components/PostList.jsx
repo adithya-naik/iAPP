@@ -11,7 +11,7 @@ const PostList = () => {
       .then((res) => res.json())
       .then((data) => {
         addInitialPosts(data.posts);
-        console.log("got from server")
+        // console.log("got from server")
       });
   };
 

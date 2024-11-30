@@ -55,7 +55,7 @@ const addPost = (userId, postTitle, postBody, tags,views,likes,dislikes)=>{
 }
 
 const delPost = (id)=>{
-  console.log(id);
+  // console.log(id);
   dispatch({
     type : "DEL_POST",
     payload : {

@@ -42,22 +42,29 @@
   display: flex;
   justify-content: start;
   align-items: center;
+  width: 100%;
+  /* border: 1px solid red; */
 }
 .my-section div{
-  margin: 0 5px;
+  margin: 0 1px;
   display: flex;
   justify-content: center;
   align-items: center;
 
+
 }
 .default-box span{
-  margin: 0  4px;
+  margin: 0  2px;
 }
 .posts-container{
   /* border: 1px solid red; */
+  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 45vh;
   /* align-items: center; */
+}
+.head{
+  width: 75dvw;
 }

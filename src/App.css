@@ -1,0 +1,63 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app-container{
+  display: flex;
+}
+.content{
+  width: 100%;
+}
+.sidebar{
+  height: 100vh;
+}
+
+.post-card{
+  width: 30rem;
+  
+   margin: 20px 50px;
+}
+
+.hashtag{
+  margin: 0px 3px;
+}
+.reactions{
+  margin: 15px 0 0 0 ;
+}
+
+.create-post{
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 20%;
+}
+.error-msg{
+  margin: 170px 0;
+  font-size: 35px;
+}
+
+.my-section {
+  margin-top: 8px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.my-section div{
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.default-box span{
+  margin: 0  4px;
+}
+.posts-container{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 45vh;
+  /* align-items: center; */
+}

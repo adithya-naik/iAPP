@@ -42,29 +42,25 @@
   display: flex;
   justify-content: start;
   align-items: center;
-  width: 100%;
-  /* border: 1px solid red; */
 }
 .my-section div{
-  margin: 0 1px;
+  margin: 0 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-
 }
 .default-box span{
-  margin: 0  2px;
+  margin: 0  4px;
 }
 .posts-container{
   /* border: 1px solid red; */
-  width: 75%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 45vh;
   /* align-items: center; */
 }
-.head{
-  width: 75dvw;
+.spin{
+  margin: 10% 0;
 }

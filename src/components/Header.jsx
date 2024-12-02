@@ -23,14 +23,7 @@ const Header = () => {
             </li>
           </ul>
 
-          <div className="text-end">
-            <button type="button" className="btn btn-outline-light me-2 p-1">
-              Login
-            </button>
-            <button type="button" className="btn btn-warning p-1">
-              Sign-up
-            </button>
-          </div>
+          
         </div>
       </div>
     </header>

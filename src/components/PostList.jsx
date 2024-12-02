@@ -4,25 +4,9 @@ import { PostList as PostListData } from "../store/post-list-store";
 import ErrorMessage from "./ErrorMessage";
 import Loading from "./Loading";
 const PostList = () => {
-  const { postList, addInitialPosts } = useContext(PostListData);
-  const [fetching, setFetching] = useState(false);
-  // here server data handling is ,more cmoplocated for rendering as when ever postslists changes its rerenders by sending multiple seerver requsts;
-  // so for that we use useEffect hook;
+  const { postList, fetching } = useContext(PostListData);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    setFetching(true);
-    fetch("https://dummyjson.com/posts",{signal})
-      .then((res) => res.json())
-      .then((data) => {
-        addInitialPosts(data.posts);
-        setFetching(false);
-      });
-      return ()=>{
-        controller.abort(); 
-      }
-  }, []);
+
 
   return (
     <>

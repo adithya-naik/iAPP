@@ -64,3 +64,22 @@
 .spin{
   margin: 10% 0;
 }
+.close{
+  outline: none;
+  border: none;
+  background-color: white;
+}
+.like:hover{
+  color: rgb(0, 183, 255);
+}
+.dislike:hover{
+  color: red;
+}
+.hide{
+  border: 1px solid red;
+}
+.x{
+    top: 12px;
+    right: -12px;
+
+}

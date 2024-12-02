@@ -1,9 +1,9 @@
-import { createContext, useCallback, useReducer } from "react";
+import { createContext, useCallback, useReducer,useState ,useEffect} from "react";
 
 export const PostList = createContext({
   postList : [],
+  fetching : false,
   addPost : ()=>{},
-  addInitialPosts : ()=>{},
   delPost : ()=>{},
 });
 
@@ -26,6 +26,10 @@ const reducerFunction = (currentPostList,action)=>{
 const PostListProvider = ({ children }) => {
 
 const [postList,dispatch] = useReducer(reducerFunction,[])
+const [fetching, setFetching] = useState(false);
+
+
+
 
 const addInitialPosts = (posts)=>{
   dispatch({
@@ -35,22 +39,10 @@ const addInitialPosts = (posts)=>{
     },
   })
 }
-const addPost = (userId, postTitle, postBody, tags,views,likes,dislikes)=>{
+const addPost = (post)=>{
   dispatch({
     type : "ADD_POST",
-    payload : {
-      id: Date.now(),
-      title:postTitle,
-      body:postBody,
-      reactions: {
-        likes : likes,
-        dislikes : dislikes,
-      },
-      views: views,
-      userId: userId,
-      tags: tags,
-
-    },
+    payload : post,
   })
 }
 
@@ -65,10 +57,29 @@ const delPost = useCallback((id)=>{
   });
 },[dispatch]);
 
+
+// gets the initial posts whwn evr the post-lists-store renders for single time
+useEffect(() => {
+  const controller = new AbortController();
+  const signal = controller.signal;
+  setFetching(true);
+  fetch("https://dummyjson.com/posts",{signal})
+    .then((res) => res.json())
+    .then((data) => {
+      addInitialPosts(data.posts);
+      setFetching(false);
+    });
+    return ()=>{
+      controller.abort(); 
+    }
+}, []);
+
+
+
   return <PostList.Provider value={{
     postList,
     addPost ,
-    addInitialPosts,
+    fetching,
     delPost,
   }}>{children}</PostList.Provider>;
 };
@@ -79,14 +90,14 @@ export default PostListProvider;
 
 
 // {
-//   id: "2",
+//   id: 2,
 //   title: "Paas ho bhai",
 //   body: "4 saal ki masti k baad bhi ho gaye hain paas. Hard to believe.",
 //   reactions: {
 //     likes :1,
 //     dislikes :3,
 //   },
-//   userId: "user-12",
+//   userId: 12,
 //   tags: ["Graduating", "Unbelievable"],
 //   views :34,
 // },

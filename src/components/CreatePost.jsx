@@ -8,8 +8,8 @@ const CreatePost = () => {
   const postTitleElement = useRef();
   const postBodyElement = useRef();
   const viewsElement = useRef();
-  const  likesElement = useRef();
-  const  dislikesElement = useRef();
+  const likesElement = useRef();
+  const dislikesElement = useRef();
   const tagsElement = useRef();
 
   const handleSubmit = (event) => {
@@ -19,7 +19,7 @@ const CreatePost = () => {
     const postTitle = postTitleElement.current.value;
     const postBody = postBodyElement.current.value;
     const likes = likesElement.current.value;
-    const dislikes =  dislikesElement.current.value;
+    const dislikes = dislikesElement.current.value;
     const tags = tagsElement.current.value.split(" ");
     const views = viewsElement.current.value;
 
@@ -28,21 +28,31 @@ const CreatePost = () => {
     postBodyElement.current.value = "";
     likesElement.current.value = "";
     tagsElement.current.value = "";
-    viewsElement.current.value = "",
+    viewsElement.current.value = "";
 
-    addPost(userId, postTitle, postBody,  tags,views,likes,dislikes);
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: postTitle,
+        body: postBody,
+        reactions: {
+          likes: likes,
+          dislikes: dislikes,
+        },
+        views: views,
+        userId: userId,
+        tags: tags,
+      }),
+    })
+      .then((res) => res.json())
+      .then((postToServerRecievedFromServer) =>
+        addPost(postToServerRecievedFromServer)
+      );
   };
-
-
-
-
-
-
 
   return (
     <form className="create-post" onSubmit={handleSubmit}>
-
-
       <div className="mb-3">
         <label htmlFor="userId" className="form-label">
           Enter your User Id here
@@ -55,7 +65,6 @@ const CreatePost = () => {
           placeholder="Your User Id"
         />
       </div>
-
 
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
@@ -96,9 +105,6 @@ const CreatePost = () => {
           placeholder="How many people viwed this post"
         />
       </div>
-
-
-    
 
       <div className="mb-3">
         <label htmlFor="likes" className="form-label">
@@ -142,9 +148,6 @@ const CreatePost = () => {
       <button type="submit" className="btn btn-primary">
         Post
       </button>
-
-
-
     </form>
   );
 };

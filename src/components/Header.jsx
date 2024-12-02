@@ -1,6 +1,6 @@
 const Header = () => {
   return (
-    <header className="p-3 bg-dark text-white">
+    <header className="p-2 bg-dark sticky-top text-white">
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
          
@@ -24,10 +24,10 @@ const Header = () => {
           </ul>
 
           <div className="text-end">
-            <button type="button" className="btn btn-outline-light me-2">
+            <button type="button" className="btn btn-outline-light me-2 p-1">
               Login
             </button>
-            <button type="button" className="btn btn-warning">
+            <button type="button" className="btn btn-warning p-1">
               Sign-up
             </button>
           </div>

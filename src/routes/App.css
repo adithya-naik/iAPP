@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+.my {
+  font-family: "Dancing Script", cursive;
+}
+.app-container {
+  display: flex;
+}
+.content {
+  width: 100%;
+}
+.sidebar {
+  height: 100vh;
+}
+
+.post-card {
+  /* width: 35rem; */
+  margin: 16px 28px;
+}
+
+.hashtag {
+  margin: 0px 3px;
+}
+.reactions {
+  margin: 15px 0 0 0;
+}
+
+.create-post {
+  margin-top: 50px;
+  width: 60%;
+  margin-left: 15%;
+}
+.error-msg {
+  margin: 170px 0;
+  font-size: 35px;
+}
+
+.my-section {
+  margin-top: 8px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.my-section div {
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.default-box span {
+  margin: 0 4px;
+}
+.posts-container {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 45vh;
+  align-items: center;
+}
+.spin {
+  margin: 10% 0 10px 0;
+}
+.close {
+  outline: none;
+  border: none;
+  background-color: white;
+  color: rgb(86, 86, 86);
+}
+.like,
+.dislike,
+.eyes {
+  font-size: larger;
+}
+.like:hover {
+  color: rgb(0, 47, 255);
+}
+.dislike:hover {
+  color: red;
+}
+.hide {
+  border: 1px solid red;
+}
+.x {
+  top: 12px;
+  right: -31px;
+}
+
+.side{
+  padding: 0;
+  margin: 0;
+  border-radius: 15px;
+  border: 1px solid rgba(128, 128, 128, 0.021);
+}
+.side:hover{
+  border-radius: 15px;
+  background-color: rgba(128, 128, 128, 0.321);
+  padding: 0;
+}
+.no-posts{
+  font-family: "Shadows Into Light", cursive;
+}
+.suggest{
+  font-size: 1rem;
+}
+.loading{
+  font-size: small;
+}
+.card-title{
+  color: rgb(71, 71, 71);
+}
+.card-text{
+  font-size: 0.95rem;
+}

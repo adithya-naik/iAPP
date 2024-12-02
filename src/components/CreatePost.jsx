@@ -1,8 +1,12 @@
 import { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
+import { useNavigate } from "react-router-dom";
 
 const CreatePost = () => {
   const { addPost } = useContext(PostList);
+
+  // as useNavigate is a hook we have to define inside a component
+  const navigate = useNavigate();
 
   const userIdElement = useRef();
   const postTitleElement = useRef();
@@ -46,18 +50,20 @@ const CreatePost = () => {
       }),
     })
       .then((res) => res.json())
-      .then((postToServerRecievedFromServer) =>
-        addPost(postToServerRecievedFromServer)
-      );
+      .then((postToServerRecievedFromServer) => {
+        addPost(postToServerRecievedFromServer);
+        navigate("/");
+      });
   };
 
   return (
     <form className="create-post" onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="userId" className="form-label">
-          Enter your User Id here
+          Enter your User Id here <span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           ref={userIdElement}
           className="form-control"
@@ -68,9 +74,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="title" className="form-label">
-          Post Title
+          Post Title <span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           ref={postTitleElement}
           className="form-control"
@@ -81,9 +88,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="body" className="form-label">
-          Post Content
+          Post Content<span className="text-danger">*</span>
         </label>
         <textarea
+          required
           type="text"
           ref={postBodyElement}
           rows="4"
@@ -95,9 +103,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="views" className="form-label">
-          Number of Views
+          Number of Views<span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           ref={viewsElement}
           className="form-control"
@@ -108,9 +117,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="likes" className="form-label">
-          Number of likes
+          Number of likes<span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           ref={likesElement}
           className="form-control"
@@ -121,9 +131,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="dislikes" className="form-label">
-          Number of dislikes
+          Number of dislikes<span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           ref={dislikesElement}
           className="form-control"
@@ -134,9 +145,10 @@ const CreatePost = () => {
 
       <div className="mb-3">
         <label htmlFor="tags" className="form-label">
-          Enter your hashtags here
+          Enter your hashtags here<span className="text-danger">*</span>
         </label>
         <input
+          required
           type="text"
           className="form-control"
           id="tags"

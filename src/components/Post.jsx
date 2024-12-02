@@ -14,9 +14,9 @@ const Post = ({ post }) => {
           <button
             title="Close"
             onClick={() => delPost(post.id)}
-            className="position-absolute  translate-middle badge  bg-danger x  close"
+            className="position-absolute  translate-middle badge  x  close"
           >
-            <IoCloseSharp />
+            <IoCloseSharp />Close
           </button>
         </div>
 
@@ -43,7 +43,7 @@ const Post = ({ post }) => {
           </div>
           <div className=" default-box ">
             <span>{post.reactions.dislikes} </span>{" "}
-            <span>
+            <span className="eyes">
               <PiEyesFill />
             </span>{" "}
           </div>

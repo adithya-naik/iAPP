@@ -29,10 +29,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from "react-
 
 const Footer = () => {
   return (
-    <footer className="bg-dark py-3 mt-auto">
+    <footer className="bg-dark py-3 pb-0 mt-auto">
       <div className="container">
         <div className="row">
-          <div className="col-lg-4 mb-3 mb-lg-0">
+          <div className="col-lg-4 mb-1 mb-lg-0">
             <h6 className="mb-2 text-secondary">
               <span className="fs-5 d-flex align-items-center">
                 <span className="my">my</span> iAPP
@@ -42,16 +42,16 @@ const Footer = () => {
               A modern social media platform focused on meaningful connections.
             </p>
           </div>
-          <div className="col-lg-4 mb-3 mb-lg-0">
+          <div className="col-lg-4 mb-1 mb-lg-0">
             <h6 className="mb-2 text-secondary">Quick Links</h6>
             <ul className="list-unstyled mb-0">
-              <li className="mb-1">
+              <li className="mb-0">
                 <Link to="/" className="text-secondary text-decoration-none small">Home</Link>
               </li>
-              <li className="mb-1">
+              <li className="mb-0">
                 <Link to="/features" className="text-secondary text-decoration-none small">Features</Link>
               </li>
-              <li className="mb-1">
+              <li className="mb-0">
                 <Link to="/about" className="text-secondary text-decoration-none small">About</Link>
               </li>
             </ul>

@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+
+
 const Header = () => {
   return (
     <header className="p-2 bg-dark sticky-top text-white">
@@ -7,19 +10,19 @@ const Header = () => {
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <a href="#" className="nav-link px-2 text-white">
+              <Link to="/" className="nav-link px-2 text-white">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 text-white">
+              <Link to="/features" className="nav-link px-2 text-white">
                 Features
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 text-white">
+              <Link to="/about" className="nav-link px-2 text-white">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
 

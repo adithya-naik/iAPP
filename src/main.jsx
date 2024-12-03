@@ -4,6 +4,10 @@ import App from './routes/App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import CreatePost from './components/CreatePost.jsx';
 import PostList from './components/PostList.jsx';
+import Profile from './components/Profile.jsx';
+import Settings from './components/Settings.jsx';
+import Features from './components/Features.jsx';
+import About from './components/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -19,7 +23,23 @@ const router = createBrowserRouter([
       {
         path : "/create-post",
         element : <CreatePost />
+      },  
+      {
+        path : "/profile",
+        element : <Profile />
       },
+      {
+        path : "/settings",
+        element : <Settings />
+      },
+      {
+        path : "/features",
+        element : <Features />
+      },
+      {
+        path : "/about",
+        element : <About />
+      }
     ]
   },
   

@@ -58,10 +58,10 @@ const Sidebar = () => {
             className="rounded-circle me-2"
           />
           <strong>mdo</strong>
-        </button>
-        <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        </button >
+        <ul className="dropdown-menu dropdown-menu-dark text-small shadow " aria-labelledby="dropdownUser1">
           <li>
-            <Link className="dropdown-item" to="/profile">
+            <Link className="dropdown-item " to="/profile">
               Profile
             </Link>
           </li>

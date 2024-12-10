@@ -57,7 +57,9 @@ const CreatePost = () => {
   };
 
   return (
-    <form className="create-post" onSubmit={handleSubmit}>
+    <div className="outlier"> 
+    <center className="fw-bold fs-2 m-5">What's in your mind...?!</center>
+    <form className="create-post  m-auto mb-3"   onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="userId" className="form-label">
           Enter your User Id here <span className="text-danger">*</span>
@@ -156,11 +158,14 @@ const CreatePost = () => {
           placeholder="Please enter tags using space"
         />
       </div>
-
-      <button type="submit" className="btn btn-primary">
+<center>
+  
+      <button type="submit" className="btn btn-primary w-50">
         Post
       </button>
+</center>
     </form>
+    </div>
   );
 };
 

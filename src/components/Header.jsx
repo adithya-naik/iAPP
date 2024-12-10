@@ -10,17 +10,17 @@ const Header = () => {
 
           <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
             <li>
-              <Link to="/" className="nav-link px-2 text-white">
+              <Link to="/" className="nav-link px-2 text-white hover_navbar ">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/features" className="nav-link px-2 text-white">
+              <Link to="/features" className="nav-link px-2 text-white hover_navbar">
                 Features
               </Link>
             </li>
             <li>
-              <Link to="/about" className="nav-link px-2 text-white">
+              <Link to="/about" className="nav-link px-2 text-white hover_navbar">
                 About
               </Link>
             </li>

@@ -5,79 +5,77 @@ const Profile = () => {
   const [showAllChats, setShowAllChats] = useState(false);
 
   const [userData] = useState({
-    name: "John Doe",
-    userId: "JD123",
-    username: "@johndoe",
-    email: "john.doe@example.com", 
-    mobile: "+1 234-567-8900",
-    address: "123 Main St, New York, NY 10001",
+    name: "Adithya J",
+    username: "adithyaj@219",
+    email: "idbhosting@gmail.com",
+    address: "Hyderabad,India",
     followers: 1234,
     following: 567,
-    bio: "Software Developer | Tech Enthusiast | Coffee Lover",
+    bio: "Software Developer | Tech Enthusiast",
     accountCreated: "2022-03-15T08:30:00",
     lastLogin: "2024-01-20T09:15:30", // Current session login time
-    activeTime: "4h 23m", // Time since last login
+    activeTime: "23m", // Time since last login
     onlineStatus: "Active",
     recentChats: [
       { 
         id: 1, 
-        name: "Jane Smith", 
+        name: "Ramesh Kumar", 
         message: "Hey, how are you?", 
         time: "2 mins ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Jane"
+        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Ramesh"
       },
       { 
         id: 2, 
-        name: "Mike Johnson", 
+        name: "Vivek Sharma", 
         message: "Did you see the new post?", 
         time: "1 hour ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Mike"
+        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Vivek"
       },
       { 
         id: 3, 
-        name: "Sarah Wilson", 
+        name: "Karthik Reddy", 
         message: "Let's catch up soon!", 
         time: "3 hours ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Sarah"
-      }
-    ],
-    allChats: [
-      { 
-        id: 4, 
-        name: "Alex Thompson", 
-        message: "Great meeting yesterday!", 
-        time: "1 day ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Alex"
+        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Karthik"
       },
-      { 
-        id: 5, 
-        name: "Emily Davis", 
-        message: "Thanks for the help!", 
-        time: "2 days ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Emily"
-      },
-      { 
-        id: 6, 
-        name: "Chris Anderson", 
-        message: "Looking forward to the project", 
-        time: "3 days ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Chris"
-      },
-      { 
-        id: 7, 
-        name: "Lisa Brown", 
-        message: "Can we schedule a call?", 
-        time: "4 days ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Lisa"
-      },
-      { 
-        id: 8, 
-        name: "Tom Wilson", 
-        message: "Check out this new feature", 
-        time: "5 days ago",
-        avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Tom"
-      }
-    ]
+      ],
+      allChats: [
+        { 
+          id: 4, 
+          name: "Rahul Patel", 
+          message: "Great meeting yesterday!", 
+          time: "1 day ago",
+          avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Rahul"
+        },
+        { 
+          id: 5, 
+          name: "Bhanu Prakash", 
+          message: "Thanks for the help!", 
+          time: "2 days ago",
+          avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Bhanu"
+        },
+        { 
+          id: 6, 
+          name: "Indraja Singh", 
+          message: "Looking forward to the project", 
+          time: "3 days ago",
+          avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Indraja"
+        },
+        { 
+          id: 7, 
+          name: "Charishma Iyer", 
+          message: "Can we schedule a call?", 
+          time: "4 days ago",
+          avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Charishma"
+        },
+        { 
+          id: 8, 
+          name: "Vinay Kumar", 
+          message: "Check out this new feature", 
+          time: "5 days ago",
+          avatar: "https://api.dicebear.com/6.x/avataaars/svg?seed=Vinay"
+        }
+      ]
   });
 
   const displayedChats = showAllChats 
@@ -146,15 +144,6 @@ const Profile = () => {
             <div className="card-body">
               <div className="row mb-3">
                 <div className="col-sm-3 d-flex align-items-center">
-                  <FaUserCircle className="me-2 text-primary" />
-                  <p className="mb-0">User ID</p>
-                </div>
-                <div className="col-sm-9">
-                  <p className="text-muted mb-0">{userData.userId}</p>
-                </div>
-              </div>
-              <div className="row mb-3">
-                <div className="col-sm-3 d-flex align-items-center">
                   <FaCalendarAlt className="me-2 text-primary" />
                   <p className="mb-0">Member Since</p>
                 </div>
@@ -180,15 +169,7 @@ const Profile = () => {
                   <p className="text-muted mb-0">{userData.email}</p>
                 </div>
               </div>
-              <div className="row mb-3">
-                <div className="col-sm-3 d-flex align-items-center">
-                  <FaPhone className="me-2 text-primary" />
-                  <p className="mb-0">Mobile</p>
-                </div>
-                <div className="col-sm-9">
-                  <p className="text-muted mb-0">{userData.mobile}</p>
-                </div>
-              </div>
+              
               <div className="row">
                 <div className="col-sm-3 d-flex align-items-center">
                   <FaMapMarkerAlt className="me-2 text-primary" />

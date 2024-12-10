@@ -119,3 +119,18 @@
 .card-text{
   font-size: 0.95rem;
 }
+.hover_navbar{
+  border-radius: 14px;
+}
+.hover_navbar:hover{
+  background-color: rgb(71, 71, 71);
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.outlier{
+  position: static;
+  height: 70vw;
+}
